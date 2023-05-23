@@ -27,8 +27,8 @@ public class AfishaManager {
     }
 
     public String[] findLast() {
-        int result = limit;
-        if (films.length < 5) {
+        int result;
+        if (films.length < limit) {
             result = films.length;
         } else {
             result = limit;

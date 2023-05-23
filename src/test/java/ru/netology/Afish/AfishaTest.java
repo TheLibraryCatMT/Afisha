@@ -84,24 +84,25 @@ public class AfishaTest {
     }
 
     @Test
-    public void testAfishaFindLastIfLimit2() {
+    public void testAfishaFindLastIfLimit1() {
         AfishaManager manager = new AfishaManager(1);
         manager.add("Film1");
+        manager.add("Film2");
 
         String[] actual = manager.findLast();
-        String[] expected = {"Film1"};
+        String[] expected = {"Film2"};
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void testAfishaFindLastIfLimitOnlyOne() {
+    public void testAfishaFindLastIfLimit2() {
         AfishaManager manager = new AfishaManager(2);
         manager.add("Film1");
         manager.add("Film2");
         manager.add("Film3");
 
         String[] actual = manager.findLast();
-        String[] expected = {"Film2", "Film1"};
+        String[] expected = {"Film3", "Film2"};
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -114,9 +115,10 @@ public class AfishaTest {
         manager.add("Film4");
         manager.add("Film5");
         manager.add("Film6");
+        manager.add("Film7");
 
         String[] actual = manager.findLast();
-        String[] expected = {"Film6", "Film5", "Film4", "Film3", "Film2", "Film1"};
+        String[] expected = {"Film7", "Film6", "Film5", "Film4", "Film3", "Film2"};
         Assertions.assertArrayEquals(expected, actual);
     }
 
